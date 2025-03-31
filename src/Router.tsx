@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { HomePage } from './pages/Home.page';
+import { HookFormDemo } from './pages/HookFormDemo.page';
+import { NoHookFormDemo } from './pages/NoHookFormDemo.page';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
+    element: <HookFormDemo />,
+  },
+  {
+    path: '/no-hook-form',
+    element: <NoHookFormDemo />,
   },
 ]);
 

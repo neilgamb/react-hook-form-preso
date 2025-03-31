@@ -1,17 +1,26 @@
-import { Container, Text, Title } from '@mantine/core';
+import { BoxProps, Container, Text, Title } from '@mantine/core';
 import classes from './Header.module.css';
 
-export function Header() {
+interface HeaderProps extends BoxProps {
+  title?: string;
+  subTitle?: string;
+}
+
+export function Header({ title, subTitle, ...rest }: HeaderProps) {
   return (
-    <Container size="lg" px="md">
-      <Title className={classes.title} ta="center" mt={50}>
-        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'blue' }}>
-          React Hook Form
-        </Text>
-      </Title>
-      <Title className={classes.subTitle} ta="center">
-        A form without the fuss
-      </Title>
+    <Container size="lg" {...rest}>
+      {title && (
+        <Title className={classes.title} ta="center">
+          <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'blue' }}>
+            {title}
+          </Text>
+        </Title>
+      )}
+      {subTitle && (
+        <Title className={classes.subTitle} ta="center">
+          {subTitle}
+        </Title>
+      )}
     </Container>
   );
 }
