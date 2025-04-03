@@ -1,13 +1,23 @@
 import { useState } from 'react';
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'; // or any icons you like
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
-import { ActionIcon, Code, Collapse, Divider, Paper, ScrollArea, Stack, Text } from '@mantine/core';
+import {
+  ActionIcon,
+  Button,
+  Code,
+  Collapse,
+  Divider,
+  Paper,
+  ScrollArea,
+  Stack,
+  Text,
+} from '@mantine/core';
 
 export function FormDebugger() {
   const [open, setOpen] = useState(true);
   const toggle = () => setOpen((prev) => !prev);
 
-  const { watch, formState } = useFormContext();
+  const { watch, formState, reset } = useFormContext();
   const { errors, touchedFields, dirtyFields, isDirty, isValid } = formState;
   const values = watch();
 
@@ -29,7 +39,7 @@ export function FormDebugger() {
           zIndex: 1000,
         }}
       >
-        {open ? <IconChevronUp size={18} /> : <IconChevronDown size={18} />}
+        {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
       </ActionIcon>
       <Collapse in={open}>
         <Paper
@@ -96,6 +106,9 @@ export function FormDebugger() {
               <Code block color="yellow">
                 {JSON.stringify(dirtyFields, null, 2)}
               </Code>
+              <Button fullWidth mt={20} variant="outline" onClick={() => reset()}>
+                Reset Form
+              </Button>
             </Stack>
           </ScrollArea>
         </Paper>

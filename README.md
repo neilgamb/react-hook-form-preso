@@ -1,34 +1,34 @@
-# Mantine Vite template
+# 🧾 React Hook Form Preso Demo
 
-## Features
+This is a simple demo project created for a presentation:  
+**“Forms Without the Fuss – React Hook Form in Action”**
 
-This template comes with the following features:
+It demonstrates how to build clean, scalable forms using [React Hook Form](https://react-hook-form.com) with the [Mantine](https://mantine.dev/) component library.
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
+---
+
+## 🛠 Tech Stack
+
+- [React Hook Form](https://react-hook-form.com/)
+- [Mantine UI](https://mantine.dev/)
+- [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
-## npm scripts
+---
 
-## Build and dev scripts
+## 📁 Project Structure
 
-- `dev` – start development server
-- `build` – build production version of the app
-- `preview` – locally preview production build
+- `/pages` – Contains the RHF version and non-RHF version of the form
+- `/components` – Reusable components (e.g. `Header`, `FormDebugger`)
+- `/theme.ts` – Custom Mantine theme with component styles
 
-### Testing scripts
+---
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `vitest` – runs vitest tests
-- `vitest:watch` – starts vitest watch
-- `test` – runs `vitest`, `prettier:check`, `lint` and `typecheck` scripts
+## 🚀 Getting Started
 
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+```bash
+git clone https://github.com/neilgamb/react-hook-form-preso.git
+cd react-hook-form-preso
+pnpm install
+pnpm dev
+```

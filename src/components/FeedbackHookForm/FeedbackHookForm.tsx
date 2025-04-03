@@ -1,5 +1,5 @@
 import { Controller, FormProvider, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Button, Checkbox, Radio, Select, Stack, Textarea, TextInput } from '@mantine/core';
 import { FormDebugger } from '../FormDebugger/FormDebugger';
 
@@ -85,7 +85,7 @@ export function FeedbackHookForm() {
 
           {/* -------------------------------------------------------------------- */}
           <Textarea
-            label="Your Feedback"
+            label="How did you like the presentation?"
             placeholder="Tell us what you think..."
             error={errors.feedback?.message}
             autosize
